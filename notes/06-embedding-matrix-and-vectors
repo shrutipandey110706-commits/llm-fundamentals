@@ -1,0 +1,81 @@
+# The Embedding Matrix and Vectors
+
+**Learning Resource:** Phillip Lacner — LLM Fundamentals
+
+## 1. What Are Embeddings?
+
+An embedding is a numerical representation of a token. It converts a token ID into a vector containing multiple numerical values that a neural network can process.
+
+These values are learned during model training and help the model represent information about tokens.
+
+## 2. What Is an Embedding Vector?
+
+An embedding vector is a list of numbers associated with a token.
+
+For example, a simplified embedding vector for the token `cats` could be:
+
+`[0.2, -0.4, 0.8, 0.1]`
+
+These values are illustrative. Real embedding vectors generally contain many more dimensions.
+
+The individual dimensions do not normally correspond to simple, human-readable labels.
+
+## 3. What Is an Embedding Matrix?
+
+An embedding matrix stores an embedding vector for every token in the model's vocabulary.
+
+- **Rows:** Represent tokens.
+- **Columns:** Represent embedding dimensions.
+- **Each row:** Contains the vector associated with a token.
+
+For example, if a vocabulary contains 1,000 tokens and each embedding has 4 dimensions, the embedding matrix has 1,000 rows and 4 columns.
+
+## 4. How Does an Embedding Matrix Work?
+
+Consider the input sentence:
+
+`I love cats`
+
+The process can be simplified into these steps:
+
+1. The tokenizer divides the text into tokens.
+2. Each token is assigned a token ID.
+3. The model uses each token ID to select the corresponding row from the embedding matrix.
+4. The selected rows provide the embedding vectors.
+5. These vectors are passed into the neural network for further processing.
+
+The embedding matrix therefore acts as a lookup table that maps token IDs to numerical vectors.
+
+## 5. Difference Between Token IDs, Vectors, and the Matrix
+
+- **Token ID:** A numerical identifier for a token.
+- **Embedding vector:** A list of learned numerical values representing a token.
+- **Embedding matrix:** A collection of embedding vectors for the vocabulary.
+
+A token ID identifies a row; the embedding matrix provides the corresponding vector.
+
+## 6. How Are Embeddings Learned?
+
+Embedding values are generally learned and adjusted during model training, along with other model parameters.
+
+The resulting vectors provide numerical representations that the neural network can use when learning and processing language patterns.
+
+## 7. Connection to Transformers
+
+In a Transformer-based LLM, token IDs are mapped to embedding vectors before the model processes them through its layers.
+
+Positional information is also incorporated so the model can account for the order of tokens in a sequence.
+
+The Transformer then processes these representations to build context-aware representations and generate outputs.
+
+## 8. Key Takeaways
+
+- Embeddings convert token IDs into numerical vectors.
+- An embedding vector contains multiple numerical values.
+- An embedding matrix stores vectors for the vocabulary.
+- Token IDs are used to look up the corresponding embedding vectors.
+- Embeddings are important inputs to neural networks and Transformer-based LLMs.
+
+## 9. What I Learned
+
+I learned the difference between token IDs, embedding vectors, and embedding matrices. I also understood how token IDs are mapped to learned numerical representations that a neural network can process.
