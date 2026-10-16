@@ -1,0 +1,31 @@
+1. First, understand the problem
+Remember what you learned earlier: a tokenizer breaks text into tokens before the LLM processes it.
+But here's the catch: the model doesn't necessarily see a whole word as one unit.
+For example, the word apple might be one token, while an unfamiliar word might be split into several tokens. Numbers can also be split in unexpected ways.
+Illustrative example — exact tokens depend on the tokenizer
+Input A: apple
+apple
+(One token, if the vocabulary contains it.)
+
+
+Input B: apples
+- apple
+- s
+(Could be two tokens, or one token, depending on the vocabulary.)
+
+
+The important point is that small changes to the text can change its tokenization.
+
+2. How can this cause weird behavior?
+Example A: Numbers
+Suppose you ask an LLM to compare two numbers or perform arithmetic.
+A human sees 12345 as a number. But a tokenizer might split it into multiple tokens, such as 123 + 45, or another combination.
+The model therefore processes a sequence of token representations, not necessarily the entire number as one indivisible unit. This can make some numerical patterns harder to learn or generalize.
+
+Example B: Unfamiliar words
+A familiar word might be a single token, but a rare name or a typo might be divided into several pieces.
+That can affect how easily the model recognizes patterns associated with the word.
+
+Example C: Similar-looking text
+Two strings that look very similar to us might be split differently by the tokenizer. This can influence the model's processing and sometimes its output.
+Remember: Tokenization is one possible reason for unexpected behavior, but it isn't the only reason. Training data, model architecture, and how the model was trained also matter.
