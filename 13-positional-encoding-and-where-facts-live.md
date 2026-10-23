@@ -92,3 +92,4 @@ RAG is useful when an application needs information that may not be present in t
 ## 10. What I Learned
 
 I learned why Transformers need positional information and how learned model weights can encode patterns and facts. I also understood the difference between training, inference, and retrieving external information through RAG.
+
