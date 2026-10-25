@@ -7,6 +7,7 @@ A language model generates text by repeatedly predicting the next token.
 For example, given:
 
 > Today, I am feeling...
+> 
 
 The model may assign probabilities to possible next tokens:
 
