@@ -1,3 +1,4 @@
+
 # With Vectors We Can Do Math
 
 **Learning Resource:** Phillip Lacner — LLM Fundamentals
