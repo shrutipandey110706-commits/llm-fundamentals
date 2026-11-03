@@ -1,5 +1,6 @@
 # The KV Cache Memory Bottleneck
 
+
 ## 1. What Is KV Cache?
 
 KV Cache is a memory optimization used in autoregressive Transformer models during text generation.
