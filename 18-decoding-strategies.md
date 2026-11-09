@@ -14,6 +14,7 @@ The model may assign probabilities to possible next tokens:
 | Token | Example Probability |
 |---|---:|
 
+
 | happy | 40% |
 | good | 25% |
 | tired | 20% |
